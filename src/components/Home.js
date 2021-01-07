@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import M from "materialize-css";
+import { addToCart } from "./actions/cartActions";
 
 class Home extends Component {
   handleClick = (id) => {
@@ -34,6 +34,7 @@ class Home extends Component {
         </div>
       );
     });
+
     return (
       <div className="container">
         <h3 className="center">Our items</h3>

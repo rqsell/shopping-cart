@@ -6,6 +6,7 @@ import {
   addQuantity,
   subtractQuantity,
 } from "./actions/cartActions";
+import Recipe from "./Recipe";
 class Cart extends Component {
   //to remove the item completely
   handleRemove = (id) => {
@@ -25,8 +26,9 @@ class Cart extends Component {
         return (
           <li className="collection-item avatar" key={item.id}>
             <div className="item-img">
-              <img src={item.img} alt={item.img} />
+              <img src={item.img} alt={item.img} className="" />
             </div>
+
             <div className="item-desc">
               <span className="title">{item.title}</span>
               <p>{item.desc}</p>
@@ -79,13 +81,16 @@ class Cart extends Component {
           <h5>You have ordered:</h5>
           <ul className="collection">{addedItems}</ul>
         </div>
+        <Recipe />
       </div>
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     items: state.addedItems,
+    //addedItems: state.addedItems
   };
 };
 const mapDispatchToProps = (dispatch) => {
